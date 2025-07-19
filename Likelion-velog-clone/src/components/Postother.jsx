@@ -50,10 +50,10 @@ const Title=styled.div`
     font-weight: 700; 
     display: flex;
     align-items: center;
-
 `
-function Postother(){
-
+function Postother({postId}){
+  const prevId = Number(postId) - 1;
+  const nextId = Number(postId) + 1;
     return(
         <Wrapper>
             <Box>
@@ -61,14 +61,20 @@ function Postother(){
                     <Title>다음 포스트</Title>
                     <Posttitle>제목</Posttitle>
                 </Textwrapper>
-                <Arrowbtn src={next}/>
+                <Link to={`/boards/${nextId}`}>
+                    <Arrowbtn src={next}/>
+                </Link>
             </Box>
             <Box>
-                <Arrowbtn src={before}/>
+                {postId>1&&(
+                    <Link to={`/boards/${prevId}`}>
+                        <Arrowbtn src={before}/>
+                    </Link>
+                )}
+
                 <Textwrapper>
                     <Title>이전 포스트</Title>
                     <Posttitle>제목</Posttitle>
-
                 </Textwrapper>
             </Box>
         </Wrapper>

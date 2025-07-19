@@ -26,8 +26,6 @@ const Page=styled.div`
 const Box=styled.div`
   margin: 36px auto;
   max-width: 768px;
-  
-  
 `
 const Title=styled.div`
   font-size: 48px;
@@ -52,8 +50,9 @@ function PostDetail() {
   const fetchData = async () => {
     try {
         const response = await axios.get(`${VITE_API_BASE_URL}/boards/${postId}`); 
-            console.log("데이터: ", response); 
+            console.log("현재꺼: ", response); 
             setPost(response.data);
+  
     } catch (err) {
         alert(err);
         console.log("오류", err); 
@@ -62,7 +61,7 @@ function PostDetail() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [postId]);
 
   console.log("정보:",post.content);
 
@@ -80,11 +79,12 @@ function PostDetail() {
       <Thumbnail src={post.thumbnailUrl}/>
       <Article>{post.content}</Article>
       <Postprofile
+          
           writerName={post.writerName}
           writerProfileUrl={post.writerProfileUrl}
       />
       <Postother
-      writerName={post.writerName}
+        postId={post.id}
       />
       </Box>
     </Page>
