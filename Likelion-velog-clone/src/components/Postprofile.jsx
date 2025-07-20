@@ -18,10 +18,20 @@ const Wrapper=styled.div`
     gap: 16px;
     font-size: 18px;
     font-weight: bold;
+    @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+    font-size: 24px;
+
+  }
 `
 const Profileimg=styled.img`
     border-radius: 999px;
     height: 80px;
+     @media (min-width: 1024px) {
+    height: 128px;
+        
+  }
 `
 const Followbtn=styled.button`
     height: 24px;

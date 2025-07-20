@@ -6,6 +6,7 @@ import axios from "axios";
 
 import Postmenu from "../components/Postmenu.jsx";
 import Postprofile from "../components/Postprofile.jsx";
+import Postfloat from "../components/Postfloat.jsx";
 
 import Categories from "../components/Categories.jsx";
 import Contents from "../components/Contents.jsx";
@@ -22,10 +23,12 @@ const Page=styled.div`
   overflow-x: hidden;
   min-height: 100vh; 
   box-sizing: border-box; 
+  
 `
 const Box=styled.div`
   margin: 36px auto;
   max-width: 768px;
+
 `
 const Title=styled.div`
   font-size: 48px;
@@ -39,6 +42,15 @@ const Thumbnail=styled.img`
 `
 const Article=styled.div`
   margin: 16px 0;
+  padding: 0px 16px;
+`
+const PostfloatWrapper = styled.div`
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+
+  }
 `
 const { VITE_API_BASE_URL } = import.meta.env;
 
@@ -69,6 +81,11 @@ function PostDetail() {
     <Page>
       <Header logoSrc={logoSrc} nameSrc={post.writerName}/>
       <Box>
+        <PostfloatWrapper>
+          <Postfloat
+          heartCount={post.heartCount}
+          />
+        </PostfloatWrapper>
         <Title>{post.title}</Title>
         <Postmenu 
           createdAt={post.createdAt}

@@ -66,6 +66,9 @@ const Heartbtn=styled.button`
     flex-direction: row;
     align-items: center;
     gap: 12px;
+    @media (min-width: 1024px) {
+    display: none;}
+
     
 `
 const Heartcount=styled.div`
