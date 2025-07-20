@@ -6,6 +6,8 @@ import notificationIcon from "../assets/icons/notification-velog.png";
 import searchIcon from "../assets/icons/search-velog.png"
 
 const Box=styled.div`
+    padding: 12px 0px;
+    box-sizing: border-box;
     display: flex;
     margin: 0 auto;
     max-width: 1024px;
@@ -17,6 +19,8 @@ const Box=styled.div`
 `
 const Logo=styled.img`
     height: 20px;
+    cursor: pointer;
+
 `
 
 const Icongroup=styled.div`
@@ -28,8 +32,22 @@ const Icongroup=styled.div`
     align-items: center;
 `
 const Icon=styled.img`
-    width: 18px;
-    height: 18px;
+    width: 20px;
+`
+const Btnwrapper=styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 99px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+          &:hover {
+       background-color: #f0f0f0;
+  }
+
 `
 const Loginbtn=styled.button`
     border: none;
@@ -40,6 +58,7 @@ const Loginbtn=styled.button`
     border-radius: 90px;
     width: 80px;
     height: 32px;
+    cursor: pointer;
 `
 const Wrapper=styled.div`
     width: 513px;
@@ -52,6 +71,7 @@ const Name = styled.div`
   font-family: 'Arial', sans-serif;
   font-size: 21px;
   font-weight: bold;
+  cursor: pointer;
 `;
 
 function Header({logoSrc, nameSrc}) {
@@ -62,8 +82,13 @@ function Header({logoSrc, nameSrc}) {
         {nameSrc ? <Name>{nameSrc}</Name>:null} 
     </Wrapper>
     <Icongroup>
-     <Icon src={notificationIcon} alt="종 아이콘"/>
-     <Icon src={searchIcon} alt="검색 아이콘"/>
+        <Btnwrapper>
+            <Icon src={notificationIcon} alt="종 아이콘"/>
+        </Btnwrapper>
+        <Btnwrapper>
+             <Icon src={searchIcon} alt="검색 아이콘"/>
+        </Btnwrapper>
+
      <Loginbtn>로그인</Loginbtn>
     </Icongroup>
   </Box>

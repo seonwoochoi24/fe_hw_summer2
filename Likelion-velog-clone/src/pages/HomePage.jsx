@@ -10,7 +10,7 @@ import axios from "axios";
 
 const Page=styled.div`
   background-color: #f8f9fa;
-  padding: 20px 20px;
+  padding: 16px 16px;
   width: 100%;
   min-width: 450px;
   overflow-x: hidden;

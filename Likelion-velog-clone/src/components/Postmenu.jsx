@@ -15,12 +15,29 @@ const Smallwrapper=styled.div`
     justify-content: space-between;
     gap: 8px;
 `
-const Blacktext=styled.div`
-    color: black;
-    font-weight: 400;
+const Writer=styled.div`
+    color: #212529;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover{
+          text-decoration: underline;
+    }
 `
-const Graytext=styled.span`
+const Blacktext=styled.div`
+    display: flex;
+    align-items: center;
+    color: #212529;
+    font-size: 14px;
+`
+const Graytext=styled.div`
+    display: flex;
+    align-items: center;
     color: #495057;
+    font-size: 14px;
+
 `
 const Followbtn=styled.button`
     height: 24px;
@@ -36,9 +53,11 @@ const Followbtn=styled.button`
     align-items: center;
     justify-content: center;
     gap: 12px;
+    cursor: pointer;
 `
 const Heartbtn=styled.button`
     height: 24px;
+    padding: 12px;
     border-radius: 99px;
     background-color: #ffffff;
     border: 1px solid #adb5bd;
@@ -47,8 +66,12 @@ const Heartbtn=styled.button`
     flex-direction: row;
     align-items: center;
     gap: 12px;
-    margin-left: 4px;
     
+`
+const Heartcount=styled.div`
+    color: #868e96;
+    font-size: 12px;
+    font-weight: 700;
 `
 const Heart=styled.img`
     width: 12px; 
@@ -64,7 +87,7 @@ function Postmenu({createdAt, heartCount, writerName, writerProfileUrl}) {
   return(
     <Wrapper>
         <Smallwrapper>
-            <Blacktext>{writerName} </Blacktext>
+            <Writer>{writerName} </Writer>
             <Blacktext>·</Blacktext>
             <Graytext>{year}년 {month}월 {day}일</Graytext>
         </Smallwrapper>
@@ -74,7 +97,7 @@ function Postmenu({createdAt, heartCount, writerName, writerProfileUrl}) {
             </Followbtn>
             <Heartbtn>
                 <Heart src={likeIcon}/>
-                {heartCount}
+                <Heartcount>{heartCount}</Heartcount>
             </Heartbtn>
         </Smallwrapper>
     </Wrapper>

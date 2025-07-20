@@ -26,8 +26,9 @@ const Smallbox2=styled.div`
 const Smallbox3=styled.div`
   border-top: 0.1px solid lightgray;
   height: 45px;
+  box-sizing: border-box;
   display: flex;
-  padding: 10px;
+  padding: 10px 16px;
   justify-content: space-between;
   align-items: center;
 `
@@ -39,15 +40,15 @@ const Wrapper=styled.div`
   gap: 10px;
 `
 const Thumbnail=styled.img`
-  height:210px;
+  height:100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: fill;
 `
 const Title=styled.h5`
-  margin: 10px;
+  margin: 16px;
 `
 const Content=styled.div`
-  margin: 10px ;
+  margin: 16px ;
   font-size: 13px;
   display: flex;
   flex-direction: row;
@@ -65,8 +66,8 @@ const Content=styled.div`
   line-height: 1.5;
 `
 const Date=styled.div`
-  margin: 10px;
-  font-size: 10px;
+  margin: 16px;
+  font-size: 12px;
   color: gray;
 `
 
@@ -79,6 +80,18 @@ const Profile=styled.img`
   height: 24px;
   border-radius: 99px;
   object-fit: fill;
+`
+const By=styled.div`
+font-size: 12px;
+  color: #868e96;
+`
+const Name=styled.b`
+  color:#212529
+`
+const Heartcount=styled.div`
+  font-size: 12px;
+  color:#212529
+
 `
 
 function Card({postId, commentCount, content, createdAt, heartCount, title, thumbnailUrl, writerName, writerProfileUrl}) {
@@ -100,11 +113,11 @@ function Card({postId, commentCount, content, createdAt, heartCount, title, thum
       <Smallbox3>
         <Wrapper>
           <Profile src={writerProfileUrl}/>
-          <div>by <b>{writerName}</b></div>
+          <By>by <Name>{writerName}</Name></By>
         </Wrapper>
         <Wrapper>
           <Icon src={likeIcon}/>
-          {heartCount}
+          <Heartcount>{heartCount}</Heartcount>
         </Wrapper>
       </Smallbox3>
     </Box>

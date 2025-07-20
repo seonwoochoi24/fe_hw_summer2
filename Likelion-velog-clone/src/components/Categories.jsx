@@ -14,6 +14,8 @@ const Box=styled.div`
     height: 72px;
     justify-content: space-between;
     align-items: center;
+    padding: 12px 0px;
+    box-sizing: border-box;
 `
 const Btnleft=styled.div`
     display: flex;
@@ -36,9 +38,9 @@ const Categorybtn=styled.div`
      }
 `
 const Icon=styled.img`
-    width: 20px;
-    height: 20px;
-
+    width: 18px;
+    height: 18px;
+     cursor: pointer;
 `
 const Btnright=styled.div`
     display: flex;
@@ -63,7 +65,10 @@ const Downbtn=styled.div`
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .04);
-
+    cursor: pointer;
+              &:hover {
+        opacity: 0.75;
+  }
 `
 function Categories() {
   return(
@@ -84,7 +89,7 @@ function Categories() {
     </Btnleft>
     <Btnright>
         <Downbtn>
-            이번달
+            이번 주
             <Icon src={downIcon}/>
         </Downbtn>
         <Icon src={menuIcon}/>
