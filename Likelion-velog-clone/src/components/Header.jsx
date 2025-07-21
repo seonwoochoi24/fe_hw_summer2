@@ -10,7 +10,7 @@ const Box=styled.div`
     box-sizing: border-box;
     display: flex;
     margin: 0 auto;
-    max-width: 1024px;
+    max-width: 1376px;
     flex-direction: row;
     height: 40px;
     justify-content: space-between;

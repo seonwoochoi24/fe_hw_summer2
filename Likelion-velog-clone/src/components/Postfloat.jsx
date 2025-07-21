@@ -16,9 +16,8 @@ const Frame=styled.div`
     background-color: #F8F9FA;
     padding: 8px;
     position: fixed;
-    left: 10%; 
     top: 112px;
-    transform: translateX(-100%);
+    transform: translateX(-150%);
 
 `
 const Circle=styled.button`
@@ -36,6 +35,9 @@ const Circle=styled.button`
     align-items: center;
         &:hover{
         border: solid #212529;
+            img {
+      filter: none;
+    }
     }
     
 `
